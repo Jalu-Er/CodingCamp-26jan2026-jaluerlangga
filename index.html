@@ -3,99 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevoU Mini Project</title>
+    <title>JE Tech Studio - Jalu Erlangga</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
         <div class="logo-container">
-            <img src="https://via.placeholder.com/50" alt="Logo" class="logo">
+            <img src="logo.png" alt="JE Tech Studio Logo" class="logo">
         </div>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="profile.html">Our Profile</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Message Us</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="welcome-section">
-            <h1>Hi <span id="user-name">User</span>, Welcome To Website</h1>
-            <p>Ini adalah website latihan pertama</p>
+        <section class="hero">
+            <div class="greeting-text">
+                Hi <span id="user-name">Visitor</span>, Welcome to
+            </div>
+            
+            <h1>JE Tech Studio</h1>
+            <p>Exploring Creativity through Code | Web & Game Development Portfolio</p>
+            
+            <a href="portfolio.html" class="btn-cta">See Our Work</a>
         </section>
 
-        <hr> <section id="headquarters">
-            <h2>Our Headquarter</h2>
-            <div class="hq-container">
-                <div class="hq-item">
-                    <div class="circle-icon"></div>
-                    <p>Jakarta</p>
+        <hr>
+
+        <section id="services">
+            <h2>Technical Focus</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-card">
+                    <div class="icon-box">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Mendalami pengembangan website responsif dan sistem informasi menggunakan HTML, CSS, dan PHP Native.</p>
                 </div>
-                <div class="hq-item">
-                    <div class="circle-icon"></div>
-                    <p>Bandung</p>
+
+                <div class="skill-card">
+                    <div class="icon-box">🎮</div>
+                    <h3>Game Dev Journey</h3>
+                    <p>Eksplorasi logika game 2D menggunakan Unity Engine serta pengembangan plugin kustom untuk server Minecraft.</p>
                 </div>
-                <div class="hq-item">
-                    <div class="circle-icon"></div>
-                    <p>Surabaya</p>
+
+                <div class="skill-card">
+                    <div class="icon-box">🐧</div>
+                    <h3>Linux Enthusiast</h3>
+                    <p>Hobi mengonfigurasi sistem operasi berbasis Arch Linux dan manajemen window manager (Hyprland).</p>
                 </div>
+
             </div>
         </section>
 
         <hr>
 
-        <section id="message-us">
-            <h2>Message Us</h2>
+        <section id="contact">
+            <h2>Say Hello</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #64748b;">
+                Ingin berdiskusi seputar coding atau sekadar menyapa? Tulis pesanmu di sini.
+            </p>
             
             <div class="form-container">
-                <form name="message-form" onsubmit="return validateForm()">
-                    <div class="form-group">
-                        <label for="name">Nama :</label>
-                        <input type="text" id="name" placeholder="Nama Anda">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="birth-date">Tanggal Lahir :</label>
-                        <input type="date" id="birth-date">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Jenis Kelamin :</label>
-                        <div class="radio-group">
-                            <input type="radio" id="male" name="gender" value="Laki-Laki">
-                            <label for="male">Laki-Laki</label>
-                            
-                            <input type="radio" id="female" name="gender" value="Perempuan">
-                            <label for="female">Perempuan</label>
+                <div class="form-left">
+                    <form name="message-form" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" placeholder="Nama Kamu">
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="message">Pesan :</label>
-                        <textarea id="message" placeholder="Pesan Anda"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="birth-date">Tanggal Lahir</label>
+                            <input type="date" id="birth-date">
+                        </div>
 
-                    <button type="submit" id="submit-btn">Submit</button>
-                </form>
+                        <div class="form-group">
+                            <label>Jenis Kelamin</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="Laki-Laki"> Laki-Laki</label>
+                                <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+                            </div>
+                        </div>
 
-                <div class="output-box">
-                    <p><strong>Current time :</strong> <span id="current-time"></span></p>
-                    <br>
-                    <p><strong>Nama :</strong> <span id="sender-name"></span></p>
-                    <p><strong>Tanggal Lahir :</strong> <span id="sender-dob"></span></p>
-                    <p><strong>Jenis Kelamin :</strong> <span id="sender-gender"></span></p>
-                    <p><strong>Pesan :</strong> <span id="sender-message"></span></p>
+                        <div class="form-group">
+                            <label for="message">Pesan Kamu</label>
+                            <textarea id="message" placeholder="Tulis sesuatu yang menarik..."></textarea>
+                        </div>
+
+                        <button type="submit">Kirim Pesan</button>
+                    </form>
+                </div>
+
+                <div class="form-output">
+                    <h3>Preview Pesan</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 1rem; color: #94a3b8;">
+                        *Pesan yang kamu tulis akan muncul di sini (Simulasi).
+                    </p>
+                    
+                    <p><strong>Waktu:</strong> <span id="current-time">-</span></p>
+                    <div style="border-top: 1px dashed #cbd5e1; margin: 1rem 0;"></div>
+                    
+                    <p><strong>Dari:</strong> <span id="sender-name">-</span></p>
+                    <p><strong>Tgl Lahir:</strong> <span id="sender-dob">-</span></p>
+                    <p><strong>Gender:</strong> <span id="sender-gender">-</span></p>
+                    <p><strong>Pesan:</strong> <br><span id="sender-message" style="color: #334155;">-</span></p>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Created By RevoU</p>
+        <p>&copy; 2026 JE Tech Studio. Created by Jalu Erlangga.</p>
     </footer>
 
     <script src="js/script.js"></script>
